@@ -1,3 +1,21 @@
+/*
+---
+description: Content scroller for overflowed and hidden content
+
+license: MIT-style
+
+authors:
+- Trae Robrock
+
+requires:
+- core:1.2.4:*
+- more:1.2.4.4:Fx.Scroll
+
+provides: [MooContentScroller]
+
+...
+*/
+
 var MooContentScroller = new Class({
 	Implements : [Options], 
 	options : {
