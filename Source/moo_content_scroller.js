@@ -39,14 +39,14 @@ var MooContentScroller = new Class({
 			var controlDiv = new Element('div', {
 				'class' : 'mcs-controls', 
 			});
-			var controlUpButton = new Element('img', {
-				'src' : this.options.path + this.options.up_img, 
+			var controlUpButton = new Element('div', {
+				'class' : 'mcs-button-up', 
 				'events' : {
 					'click' : this.scrollUp.bind(this),
 				}, 
 			});
-			var controlDownButton = new Element('img', {
-				'src' : this.options.path + this.options.down_img, 
+			var controlDownButton = new Element('div', {
+				'class' : 'mcs-button-up', 
 				'events' : {
 					'click' : this.scrollDown.bind(this), 
 				}, 
