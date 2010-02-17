@@ -39,14 +39,14 @@ var MooContentScroller = new Class({
 			var controlDiv = new Element('div', {
 				'class' : 'mcs-controls', 
 			});
-			var controlUpButton = new Element('img', {
-				'src' : this.options.path + this.options.up_img, 
+			var controlUpButton = new Element('div', {
+				'class' : 'mcs-button-up', 
 				'events' : {
 					'click' : this.scrollUp.bind(this),
 				}, 
 			});
-			var controlDownButton = new Element('img', {
-				'src' : this.options.path + this.options.down_img, 
+			var controlDownButton = new Element('div', {
+				'class' : 'mcs-button-down', 
 				'events' : {
 					'click' : this.scrollDown.bind(this), 
 				}, 
@@ -98,7 +98,6 @@ var MooContentScroller = new Class({
 	},
 	
 	resetControls : function(controlDiv){
-		var controlBg = controlDiv.getPrevious();
 		var ele = controlDiv.getParent();
 		
 		var newControlDivPos = controlDiv.position({
@@ -108,13 +107,5 @@ var MooContentScroller = new Class({
 			returnPos : true, 
 		});
 		controlDiv.morph(newControlDivPos);
-		
-		var newControlBgPos = controlBg.position({
-			relativeTo : ele, 
-			position : 'centerBottom', 
-			edge : 'centerBottom', 
-			returnPos : true, 
-		});
-		controlBg.morph(newControlBgPos);
 	},
 });
