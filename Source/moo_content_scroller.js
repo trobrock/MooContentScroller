@@ -51,6 +51,8 @@ var MooContentScroller = new Class({
 					'click' : this.scrollDown.bind(this), 
 				}, 
 			});
+			
+			controlDiv.setStyle('width', parseInt(controlUpButton.getSize().x) + parseInt(controlUpButton.getSize().x));
 
 			controlUpButton.inject(controlDiv);
 			controlDownButton.inject(controlDiv);
@@ -98,7 +100,6 @@ var MooContentScroller = new Class({
 	},
 	
 	resetControls : function(controlDiv){
-		var controlBg = controlDiv.getPrevious();
 		var ele = controlDiv.getParent();
 		
 		var newControlDivPos = controlDiv.position({
@@ -108,13 +109,5 @@ var MooContentScroller = new Class({
 			returnPos : true, 
 		});
 		controlDiv.morph(newControlDivPos);
-		
-		var newControlBgPos = controlBg.position({
-			relativeTo : ele, 
-			position : 'centerBottom', 
-			edge : 'centerBottom', 
-			returnPos : true, 
-		});
-		controlBg.morph(newControlBgPos);
 	},
 });
