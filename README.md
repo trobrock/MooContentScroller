@@ -10,23 +10,16 @@ How to use
 
 This plugin is intended to be very simple to use. There is only one requirement for an element for this to be used on, the element must have an overflow of hidden set. Other than that it doesn't take much to setup.
 
-	var myScrollerOne = new MooContentScoller(element, options);
+	var myScrollerOne = new MooContentScoller(element);
 
 *element* can either be a single element retrieved with document.id or $(), or it can be an array of elements retrieved with $$().
-*options* has a few options that you can set:
-	options = {
-		path : '', // This is the path to the img dir that contains the up and down arrows
-		up_img : 'img/scroller_up.png', // This is the default image for the up arrow
-		down_img : 'img/scroller_down.png', // This is the default image for the down arrow
-		background : '#000', // This is how you would change the background color of the controls
-	}
 
-And that's it something like this would add the scroller to any div's with the class of 'scrollable' and assumes the img folder is stored in the js/MooContentScroller relative to the page being viewed
+And that's it something like this would add the scroller to any div's with the class of *scrollable*.
 
 	var elements = $$('div.scrollable');
-	var myDivScroller = new MooContentScroller(elements, {
-		path : 'js/MooContentScroller/',
-	});
+	var myDivScroller = new MooContentScroller(elements);
+
+Currently there is no support for the changing of background colors, but you can change the background png of the mcs-controls class to any 1x1 semi-transparent png that you would like.  This goes the same for the button images, I will be adding this functionality soon.
 
 Notes
 -----------------
