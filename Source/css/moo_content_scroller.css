@@ -2,12 +2,14 @@
 	background: transparent url('img/scroller_up.png') no-repeat;
 	width: 16px;
 	height: 13px;
+	display: inline;
 }
 
 .mcs-button-down {
 	background: transparent url('img/scroller_down.png') no-repeat;
 	width: 16px;
 	height: 13px;
+	display: inline;
 }
 
 .mcs-controls {

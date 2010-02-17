@@ -46,7 +46,7 @@ var MooContentScroller = new Class({
 				}, 
 			});
 			var controlDownButton = new Element('div', {
-				'class' : 'mcs-button-up', 
+				'class' : 'mcs-button-down', 
 				'events' : {
 					'click' : this.scrollDown.bind(this), 
 				}, 
