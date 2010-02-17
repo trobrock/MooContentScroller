@@ -61,14 +61,6 @@ var MooContentScroller = new Class({
 				position: 'centerBottom', 
 				edge: 'centerBottom'
 			});
-			
-			controlBg.inject(controlDiv, 'before');
-			controlBg.setStyles({width : controlDiv.getSize().x, height : controlDiv.getSize().y});
-			controlBg.position({
-				relativeTo : ele, 
-				position : 'centerBottom', 
-				edge : 'centerBottom', 
-			});
 		}.bind(this));
 	},
 	
