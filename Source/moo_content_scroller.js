@@ -51,8 +51,6 @@ var MooContentScroller = new Class({
 					'click' : this.scrollDown.bind(this), 
 				}, 
 			});
-			
-			controlDiv.setStyle('width', parseInt(controlUpButton.getSize().x) + parseInt(controlUpButton.getSize().x));
 
 			controlUpButton.inject(controlDiv);
 			controlDownButton.inject(controlDiv);
