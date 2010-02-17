@@ -18,12 +18,7 @@ provides: [MooContentScroller]
 
 var MooContentScroller = new Class({
 	Implements : [Options], 
-	options : {
-		path : '', 
-		up_img : 'img/scroller_up.png', 
-		down_img : 'img/scroller_down.png', 
-		background : '#000', 
-	}, 
+	options : {}, 
 	
 	initialize : function(element, options){
 		this.setOptions(options);
@@ -42,26 +37,12 @@ var MooContentScroller = new Class({
 	injectControls : function(elements){		
 		elements.each(function(ele){
 			var controlDiv = new Element('div', {
-				'class' : 'cs-controls', 
-				'styles' : { 
-					'padding' : 3, 
-					'text-align' : 'center', 
-				}, 
-			});
-			var controlBg = new Element('div', {
-				'styles' : { 
-					'background-color' : this.options.background, 
-					'opacity' : 0.6, 
-				}, 
+				'class' : 'mcs-controls', 
 			});
 			var controlUpButton = new Element('img', {
 				'src' : this.options.path + this.options.up_img, 
 				'events' : {
 					'click' : this.scrollUp.bind(this),
-				}, 
-				'styles' : {
-					'cursor' : 'pointer', 
-					'position' : 'relative', 
 				}, 
 			});
 			var controlDownButton = new Element('img', {
@@ -69,10 +50,6 @@ var MooContentScroller = new Class({
 				'events' : {
 					'click' : this.scrollDown.bind(this), 
 				}, 
-				'styles' : {
-					'cursor' : 'pointer', 
-					'position' : 'relative', 
-				},
 			});
 
 			controlUpButton.inject(controlDiv);

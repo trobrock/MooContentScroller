@@ -1,0 +1,21 @@
+.mcs-button-up {
+	background: transparent url('img/scroller_up.png') no-repeat;
+	width: 16px;
+	height: 13px;
+}
+
+.mcs-button-down {
+	background: transparent url('img/scroller_down.png') no-repeat;
+	width: 16px;
+	height: 13px;
+}
+
+.mcs-controls {
+	background: transparent url('img/controls-bg-60.png') repeat;
+	padding: 3px;
+	text-align: center;
+}
+
+.mcs-controls img {
+	cursor: pointer;
+}
