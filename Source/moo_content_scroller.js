@@ -37,19 +37,19 @@ var MooContentScroller = new Class({
 	injectControls : function(elements){		
 		elements.each(function(ele){
 			var controlDiv = new Element('div', {
-				'class' : 'mcs-controls', 
+				'class' : 'mcs-controls'
 			});
 			var controlUpButton = new Element('div', {
 				'class' : 'mcs-button-up', 
 				'events' : {
-					'click' : this.scrollUp.bind(this),
-				}, 
+					'click' : this.scrollUp.bind(this)
+				}
 			});
 			var controlDownButton = new Element('div', {
 				'class' : 'mcs-button-down', 
 				'events' : {
-					'click' : this.scrollDown.bind(this), 
-				}, 
+					'click' : this.scrollDown.bind(this)
+				}
 			});
 
 			controlUpButton.inject(controlDiv);
@@ -104,8 +104,8 @@ var MooContentScroller = new Class({
 			relativeTo: ele, 
 			position: 'centerBottom', 
 			edge: 'centerBottom',
-			returnPos : true, 
+			returnPos : true
 		});
 		controlDiv.morph(newControlDivPos);
-	},
+	}
 });
