@@ -15,9 +15,7 @@
 .mcs-controls {
 	background: transparent url('img/controls-bg-60.png') repeat;
 	padding: 3px;
+	width: 32px;
 	text-align: center;
-}
-
-.mcs-controls img {
 	cursor: pointer;
 }
