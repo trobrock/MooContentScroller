@@ -19,9 +19,11 @@ And that's it something like this would add the scroller to any div's with the c
 	var elements = $$('div.scrollable');
 	var myDivScroller = new MooContentScroller(elements);
 
-Currently there is no support for the changing of background colors, but you can change the background png of the mcs-controls class to any 1x1 semi-transparent png that you would like.  This goes the same for the button images, I will be adding this functionality soon.
+Currently there is no support for the changing of background colors, but you can change the background png of the mcs-controls class to any 1x1 semi-transparent png that you would like.  This goes the same for the button images.
+
+If you are using something like the Fx.Accordion class in your scrollable container, be sure to include the element_spy.js file.  This class was written by David Walsh (http://davidwalsh.name).  It is used to detect a change in the scroll size of the container and move the control buttons to the proper location.
 
 Notes
 -----------------
 
-This plugin is still in very early development and is one of my first attempts at building a MooTools plugin, help is always welcome. Feel free to fork the repo.
+The ElementSpy class watching the scroll size is still a little buggy, and the transition ends up a little jittery, I will be fixing this issue as soon as I can.
