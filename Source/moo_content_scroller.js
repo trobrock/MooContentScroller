@@ -8,6 +8,7 @@ authors:
 - Trae Robrock
 
 requires:
+- ElementSpy
 - core:1.2.4:*
 - more:1.2.4.4:Fx.Scroll
 
@@ -61,6 +62,26 @@ var MooContentScroller = new Class({
 				position: 'centerBottom', 
 				edge: 'centerBottom'
 			});
+			
+			if ($defined(ElementSpy)) {
+				var myElementSpy = new ElementSpy(ele, function(){
+					return this.getScrollSize().y;
+				}, {
+					duration : 1500, 
+					onChange : function(old, nu){
+						if ((ele.getScrollSize().y + ele.getSize().y) > ele.getScroll().y) {
+							var yOff = (ele.getScrollSize().y + ele.getSize().y) - ele.getScroll().y;
+							var divScroll = new Fx.Scroll(ele);
+							divScroll.start(0, yOff).chain(
+								function(){
+									this.resetControls(controlDiv);
+								}.bind(this)
+							);
+						}
+					}.bind(this),
+				});
+				myElementSpy.start();
+			}
 		}.bind(this));
 	},
 	
