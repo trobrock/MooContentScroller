@@ -24,14 +24,13 @@ var MooContentScroller = new Class({
 	initialize : function(element, options){
 		this.setOptions(options);
 		
-		if ($type(element) !== 'array') {
-			element = [element];
-		}
+		// Filter the elements, looks for only elements with an overflow of hidden
+		element = ($type(element) !== 'array') ? [element] : element;
 		element = element.filter(function(item){
-			if (item.getStyle('overflow').toLowerCase() === 'hidden') {
-				return true;
-			}
+			return (item.getStyle('overflow').toLowerCase() === 'hidden');
 		});
+		
+		// Inject the controls in to element
 		this.injectControls(element);
 	},
 	
@@ -53,8 +52,8 @@ var MooContentScroller = new Class({
 				}
 			});
 
-			controlUpButton.inject(controlDiv);
-			controlDownButton.inject(controlDiv);
+			controlDiv.grab(controlUpButton);
+			controlDiv.grab(controlDownButton);
 			
 			controlDiv.inject(ele);
 			controlDiv.position({
